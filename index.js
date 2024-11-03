@@ -14,7 +14,7 @@ const productRoutes = require('./routes/productRoutes')
 const bodyParser = require('body-parser');
 
 const path = require('path');
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 dotEnv.config();
 
@@ -38,6 +38,6 @@ app.listen(PORT, () => {
     console.log(`Server started and running at ${PORT}`);
 });
 
-app.use('/home', (req, res) => {
+app.use('/', (req, res) => {
     res.send("<h1>Welcome to Yukthi</h1>");
 });
