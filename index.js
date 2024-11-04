@@ -3,7 +3,11 @@ const express = require("express");
 const app = express();
 
 const dotEnv = require("dotenv");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+var cors = require('cors');
+
+
+app.use(cors())
 
 const VendorRoutes = require('./routes/vendorRoutes');
 
